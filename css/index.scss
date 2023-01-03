@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import 'functions';
+@import 'variables';
+
+* {
+    @include documentSet();
+}
+
+body {
+    @include flexSet(center, center, column);
+    @include wd(100vh, 100%);
+}
+
+.container {
+    @include flexSet(center, center, column);
+    @include wd(80vh, 80%);
+
+    &_title {
+        padding: 0rem 2rem;
+        margin-bottom: 1rem;
+        width: 50%;
+
+        h2 {
+            color: $main;
+        }
+    }
+
+    &_inputs {
+        @include flexSet(center, center, row);
+        margin-bottom: 2rem;
+        padding: 1rem;
+        width: 50%;
+
+        input {
+            width: 90%;
+            padding: 0.4rem 0.6rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 0.4rem 0.6rem; 
+            cursor: pointer;
+            color: $wt;
+            background: $main;
+            border: 1px solid $main;
+        }
+    }
+
+    &_table {
+        @include flexSet(center, center, column);
+        margin-bottom: 2rem;
+        padding: 1rem;
+        width: 50%;
+
+        table, th, td {
+            padding: 0.8rem 1rem;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+
+            thead {
+                background: $main;
+
+                tr {
+                    font-size: 0.8rem;
+                    color: $wt;
+                }
+            }
+
+            tbody {
+                background: $wt;
+
+                tr {
+                    font-size: 0.7rem;
+                    color: $bc;
+                }
+            }
+        }
+    }
+}
